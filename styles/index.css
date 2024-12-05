@@ -1,0 +1,29 @@
+:root{
+    --dark-red: #b23831;
+    --light-red: #D11D27;
+    --rose-red: #FBEBD8;
+    --maroon: #532f35;
+    --burgundy: #cec3a8;
+    --white: #fff;
+}
+
+header {
+    background-color: var(--dark-red);
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-brand{
+    letter-spacing: 2px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-link{
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--white)
+}
+
+.nav-link:hover{
+    color: var(--rose-red)
+}
