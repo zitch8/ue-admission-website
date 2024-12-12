@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .draggable {
+      width: 100px;
+      height: 100px;
+      background-color: #007BFF;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
+  <h1>Drag and Drop Example</h1>
+  <div class="container">
+    <div class="box" id="dropZone1">
+      Drop Here
+    </div>
+    <div class="draggable" draggable="true" id="dragItem">
+      Drag Me
+    </div>
+    <div class="box" id="dropZone2">
+      Drop Here
+    </div>
+  </div>
+
+  <script>
+    const dragItem = document.getElementById('dragItem');
+    const dropZones = document.querySelectorAll('.box');
+
+    // Handle drag start
+    dragItem.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', dragItem.id);
+      dragItem.style.opacity = '0.5'; // Add visual feedback
+    });
+
+    // Reset style on drag end
+    dragItem.addEventListener('dragend', () => {
+      dragItem.style.opacity = '1';
+    });
+
+    dropZones.forEach((zone) => {
+      // Prevent default to allow dropping
+      zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        zone.style.backgroundColor = '#f0f8ff'; // Add hover effect
+      });
+
+      // Remove hover effect
+      zone.addEventListener('dragleave', () => {
+        zone.style.backgroundColor = '';
+      });
+
+      // Handle drop event
+      zone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const data = e.dataTransfer.getData('text/plain');
+        const draggedElement = document.getElementById(data);
+        zone.style.backgroundColor = '';
+        zone.appendChild(draggedElement);
+      });
+    });
+  </script>
+</body>
+</html>
