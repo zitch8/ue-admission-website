@@ -1,11 +1,13 @@
 function fillSchoolDetails(school) {
     if (school === 'manila') {
         // Fill details for University of the East - Manila
+        document.getElementById('schoolSearch').value = "University of the East - Manila";
         document.getElementById('schoolAddress').value = "Recto Avenue, Manila, Philippines";
         document.getElementById('schoolType').value = "private";
         document.getElementById('schoolCode').value = "12345";
     } else if (school === 'caloocan') {
         // Fill details for University of the East - Caloocan
+        document.getElementById('schoolSearch').value = "University of the East - Manila";
         document.getElementById('schoolAddress').value = "Caloocan City, Philippines";
         document.getElementById('schoolType').value = "private";
         document.getElementById('schoolCode').value = "67890";

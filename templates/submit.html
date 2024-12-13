@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UE Online Application For Admission</title>
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!--Styles-->
+    <link href="../styles/root.css" rel="stylesheet" />
+    <link href="../styles/form.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:
+                ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;
+                1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      input[type=text] {
+        border-top-left-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row me-0">
+      <div class="col-md-3 p-0 nav-content">
+        <div class="container-fluid">
+          <div class="logo py-4">
+            <a href="../index.html" class="nav-link d-flex align-items-center">
+              <img src="../media/ue.png" class="img-fluid ms-3" />
+
+              <p class="title ms-2 h5">University of the East</p>
+            </a>
+          </div>
+        </div>
+
+        <!--Navbar Content-->
+        <div class="container-fluid p-0">
+          <ul class="navbar-nav">
+              <a href="#" class="link px-4 py-3 nav-link" data-target="1" id="selectableLink">
+                  <li class="nav-item d-flex align-items-center">
+                      <i class="fa-solid fa-user nav-img ms-4 me-3 img-fluid"></i>
+                      Applicant Information
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="#" class="link px-4 py-3 nav-link" data-target="2" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-address-book nav-img ms-4 me-3 img-fluid"></i>
+                      Contact Information
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="#" class="link px-4 py-3 nav-link" data-target="3" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-school nav-img ms-4 me-3 img-fluid"></i>
+                      Previous School
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="#" class="link px-4 py-3 nav-link" data-target="4" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-check-double nav-img ms-4 me-3 img-fluid"></i>
+                      Confirmation
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="#" class="selected link px-4 py-3 nav-link" data-target="5" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-paper-plane nav-img ms-4 me-3 img-fluid"></i>
+                      Submit
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+          </ul>
+      </div>
+      </div>
+
+      <div class="col-md-9 py-3 px-5" style="overflow: auto; height: 100vh">
+        <!--Top Nav-->
+        <div class="row content">
+          <div class="navbar navbar-expand-lg p-1">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-5">
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="">Courses</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="">Assessment Date</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="">Admission</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Form-->
+        <div
+          class="row py-4 content mt-md-4 mt-2 align-items-center justify-content-center p-2"
+        >
+          <h1 class="">Review Your Information </h1>
+          <div
+            class="form-content container-fluid justify-content-center row mt-3"
+          >
+            <div class="d-flex row gx-4 mt-md-0 mt-3">
+          <div class="col-md-3 mb-3 text-center">
+                  <img id="profile" src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg" class="rounded-circle" alt="Profile Image" width="150" height="150" onerror="this.onerror=null; this.src='../media/placeholder.png';">
+                </div>
+
+                <div class="col-md-3 my-4">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    value="firstName"
+                    disabled
+                  />
+                </div>
+
+                <div class="col-md-3 my-4">
+                
+                  <label for="middleName" class="form-label">Middle Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="middleName"
+                    value="middleName"
+                    disabled
+                  />
+                </div>
+
+                <div class="col-md-3 my-4">
+                
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    value="lastName"
+                    disabled
+                  />
+                </div>
+
+<hr class="my-4">
+                <div class="col-md-3 mb-3">
+                  <label for="program" class="form-label">Program</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="program"
+                      value="program"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="campus" class="form-label">Campus</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="campus"
+                      value="campus"
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="class" class="form-label">Class</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-chalkboard"></i></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="class"
+                      value="class"
+                      disabled
+                    />
+                  </div>
+                </div>
+
+<hr class="my-4">
+<div class="col-md-4 mb-3">
+  <label for="email" class="form-label">Email</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      value="email"
+      disabled
+    />
+  </div>
+</div>
+
+<div class="col-md-4 mb-3">
+  <label for="examDate" class="form-label">Examination Date</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa-solid fa-calendar"></i></span>
+    <input
+      type="text"
+      class="form-control"
+      id="examDate"
+      value="examDate"
+      disabled
+    />
+  </div>
+ 
+</div>
+
+<div class="row mt-3 ">
+  <button
+    id="submit"
+    class="btn btn-success m-auto"
+  
+  >
+    Submit
+  </button>
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Confirm Submission</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to submit the form?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="confirmSubmit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('submit').addEventListener('click', function() {
+    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+    confirmationModal.show();
+  });
+
+  document.getElementById('confirmSubmit').addEventListener('click', function() {
+    // Add your form submission logic here
+    alert('Form submitted!');
+    var confirmationModal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+    confirmationModal.hide();
+  });
+</script>
+
+
+                
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const cpiInputs = document.querySelectorAll(".cpi-input");
+
+      if (cpiInputs) {
+        cpiInputs.forEach((cpiInput) => {
+          let cpiInputDropItems = cpiInput.querySelectorAll(".dropdown-item");
+          let cpiDropBtn = cpiInput.querySelector(".cpi-drop");
+          let cpiExtTxt = cpiInput.querySelector(".cpi-ext-txt");
+          let countryCodeInput = cpiInput.querySelector(".country-code-input");
+          let phoneInput = cpiInput.querySelector(".phone-input");
+
+          phoneInput.addEventListener("focus", () => {
+            cpiInput.classList.add("cpi-input-focus");
+          });
+
+          phoneInput.addEventListener("blur", () => {
+            cpiInput.classList.remove("cpi-input-focus");
+          });
+
+          if (cpiInputDropItems) {
+            cpiInputDropItems.forEach((cpiInputDropItem) => {
+              cpiInputDropItem.addEventListener("click", (event) => {
+                let dataSet = event.target.dataset;
+
+                cpiDropBtn.innerHTML = `<span class="me-1">${dataSet.cpiIcon}</span> ${dataSet.cpiExt}`;
+                countryCodeInput.value = dataSet.cpiExt;
+
+                // reset to default to avoid error
+                phoneInput.minLength = 0;
+                phoneInput.maxLength = 524288;
+
+                phoneInput.minLength = `${dataSet.cpiMinLength}`;
+                phoneInput.maxLength = `${dataSet.cpiMaxLength}`;
+                phoneInput.focus();
+              });
+            });
+          }
+        });
+      }
+    </script>
+    <!-- Enable Region if Ph is selected -->
+    <script>
+      function toggleRegion() {
+        const countrySelect = document.getElementById("country");
+        const regionSelect = document.getElementById("region");
+        if (countrySelect.value === "philippines") {
+          regionSelect.disabled = false;
+        } else {
+          regionSelect.disabled = true;
+          regionSelect.value = "";
+        }
+      }
+    </script>
+
+    <!--Script-->
+    <script src="../static/submit.js"></script>
+    <script src="../static/submit.js"></script>
+  </body>
+</html>

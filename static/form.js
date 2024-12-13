@@ -47,15 +47,15 @@ function validateInputs() {
   // }
 }
 
-// function restoreInputValues() {
-//   const fields = document.querySelectorAll('input, select, textarea');
-//   fields.forEach(field => {
-//     const savedValue = localStorage.getItem(field.id);
-//     if (savedValue) {
-//       field.value = savedValue;
-//     }
-//   });
-// }
+function restoreInputValues() {
+  const fields = document.querySelectorAll('input, select, textarea');
+  fields.forEach(field => {
+    const savedValue = localStorage.getItem(field.id);
+    if (savedValue) {
+      field.value = savedValue;
+    }
+  });
+}
 
 
 // Handle Drop Zone Setup
