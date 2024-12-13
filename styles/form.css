@@ -2,7 +2,6 @@ body{
     background-color: var(--light-gray);
 }
 
-
 /* Nav Link */
 .nav-content {
     background-color: white;
@@ -21,6 +20,9 @@ body{
 
 .link:hover{
     background-color: var(--rose-red);
+}
+.bg-check{
+    background-color: var(--disabled)!important;
 }
 
 .selected {
@@ -187,13 +189,13 @@ body{
     opacity: 100%;
 }
 
-.form-content #input-error {
-    color: var(--dark-red);
+#input-error, .error {
+    color: var(--dark-red) !important;
     font-size: 0.8rem;
 }
 
 .border-red {
-    border-color: var(--dark-red);
+    border-color: var(--dark-red) !important;
 }
 
 .form-content input[type=text], input[type=date], select, option {
@@ -215,6 +217,8 @@ input[type=date], select {
     font-weight: 300;
     opacity: 80%;
 }
+
+
 
 @media only screen and (max-width: 768px){
     .nav-content {

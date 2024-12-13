@@ -3,6 +3,7 @@
 function validateInputs() {
   // Select all input and select elements
   const fields = document.querySelectorAll('input, select, .drop-zone, .drop-zone-file');
+  let allValid = true;
 
   fields.forEach(field => {
       const errorSpan = field.nextElementSibling;
@@ -16,6 +17,7 @@ function validateInputs() {
               
               errorSpan.textContent = 'Please upload a file.';
               field.classList.add('border-red');
+              allValid = false;
             } else {
               console.log('fileInputLength', fileInput.files.length)
               errorSpan.textContent = '';
@@ -24,8 +26,9 @@ function validateInputs() {
           } else if (field.value.trim() === '' && field.id !== 'notRequired') {
               errorSpan.textContent = 'This field is required.';
               field.classList.add('border-red');
+              allValid = false;
           }
-          /* place else if here for other input validation (ex. email regex and etc. */ 
+          /* place else if here for other input validation (ex. email regex and etc. */
           else {
               errorSpan.textContent = '';
               field.classList.remove('border-red');
@@ -34,6 +37,16 @@ function validateInputs() {
         console.log("test", field, "errorspan", errorSpan);
       };
   });
+
+  if (allValid || currentPageIndex < pages.length - 1) {
+    console.log("All inputs are valid! Proceeding to the next page...");
+    console.log(allValid, currentPageIndex, pages.length)
+    navigateToPage(currentPageIndex + 1)
+  } else {
+    console.log(allValid, currentPageIndex, pages.length)
+    alert("Please complete the current page before proceeding.");
+    return;
+  }
 }
 
 
