@@ -23,7 +23,7 @@ function validateInputs() {
               errorSpan.textContent = '';
               field.classList.remove('border-red');
             }
-          } else if (field.value.trim() === '' && field.id !== 'notRequired') {
+          } else if (field.value.trim() === '' && (field.id !== 'notRequired')) {
               errorSpan.textContent = 'This field is required.';
               field.classList.add('border-red');
               allValid = false;
