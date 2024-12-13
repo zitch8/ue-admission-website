@@ -1,0 +1,20 @@
+:root{
+    /* Colors */
+
+    --dark-red: #b23831;
+    --light-red: #D11D27;
+    --rose-red: #FBEBD8;
+    --maroon: #532f35;
+    --burgundy: #cec3a8;
+    --light-gray: #bfbfbf;
+    --white: #fff;
+
+    /* Fonts */
+    --poppins: 'Poppins', sans-serif;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}

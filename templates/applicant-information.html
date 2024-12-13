@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UE Online Application For Admission</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous">
+
+    <!--Styles-->
+    <link href="../styles/root.css" rel="stylesheet">
+    <link href="../styles/form.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        rel="stylesheet"
+    />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:
+                ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;
+                1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+        rel="stylesheet">
+    </head>
+  <body>
+        <!-- <header class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="ms-4" href="#">
+                    <img src="../media/ue.png" style="width: 60px;">
+                </a>
+                <a class="navbar-brand h1 ms-3" href="#">
+                    UNIVERSITY OF THE EAST
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-5">
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Courses</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Assessment Date</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="">Admission</a>
+                        </li>
+                    </ul>   
+                </div>
+            </nav>
+        </header> -->
+        <div class="row me-0">
+                <div class="col-md-3 p-0 nav-content">
+                    <div class="container-fluid">
+                        <div class="logo py-4">
+                            <a href="../index.html" class="nav-link d-flex align-items-center">
+                                <img src="../media/ue.png" class="img-fluid ms-3">
+                                
+                                <p class="title ms-2 h5">Univeristy of the East</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--Navbar Content-->
+                    <div class="container-fluid p-0">
+                        <ul class="navbar-nav">
+                            <a href="" class="selected link px-4 py-3 nav-link" id="selectableLink">
+                                <li class="nav-item d-flex align-items-center">
+                                    <i class="fa-solid fa-user nav-img ms-4 me-3 img-fluid"></i>
+                                    Applicant Information
+                                    <!--remove d-none if its above the link you are working on-->
+                                    <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                                </li>
+                            </a>
+                            <a href="" class="link disabled px-4 py-3 nav-link" id="selectableLink">
+                                <li class="nav-item">
+                                    <i class="fa-solid fa-address-book nav-img ms-4 me-3 img-fluid"></i>
+                                    Contact Information
+                                    
+                                    <!--remove d-none if its above the link you are working on-->
+                                    <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                                </li>
+                            </a>
+                            <a href="" class="link disabled px-4 py-3 nav-link" id="selectableLink">
+                                <li class="nav-item">
+                                    <i class="fa-solid fa-school nav-img ms-4 me-3 img-fluid"></i>
+                                    Previous School
+                                    
+                                    <!--remove d-none if its above the link you are working on-->
+                                    <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                                </li>
+                            </a>
+                            <a href="" class="link disabled px-4 py-3 nav-link" id="selectableLink">
+                                <li class="nav-item">
+                                    <i class="fa-solid fa-check-double nav-img ms-4 me-3 img-fluid"></i>
+                                    Confirmation
+                                    
+                                    <!--remove d-none if its above the link you are working on-->
+                                    <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                                </li>
+                            </a>
+                            <a href="" class="link disabled px-4 py-3 nav-link" id="selectableLink">
+                                <li class="nav-item">
+                                    <i class="fa-solid fa-paper-plane nav-img ms-4 me-3 img-fluid"></i>
+                                    Submit
+                                    
+                                    <!--remove d-none if its above the link you are working on-->
+                                    <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-9 py-3 px-5" style="overflow: auto; height: 100vh;">
+                    <!--Top Nav-->
+                    <div class="row content">
+                        <div class="navbar navbar-expand-lg p-1">
+                            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav ms-auto me-5">
+                                        <li class="nav-item ms-3">
+                                            <a class="nav-link" href="">Courses</a>
+                                        </li>
+                                        <li class="nav-item ms-3">
+                                            <a class="nav-link" href="">Assessment Date</a>
+                                        </li>
+                                        <li class="nav-item ms-3">
+                                            <a class="nav-link" href="">Admission</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Form-->
+                    <div class="row py-4 content mt-md-4 mt-2 align-items-center justify-content-center p-2">
+                        <h1 class="">Application Information</h1>
+                        <div class="form-content container-fluid  justify-content-center row mt-3">
+                            <div class="image-search-container col-md-3 me-3">
+                                <label style="text-align: left;">Upload Your Photo<span> *</span></label>
+                                <p style="font-size: 10px;" class="mb-4 text-start text-muted">must be latest 2&times;2 with white background</p>
+                                <div id="drop-zone" class="drop-zone dotted-border p-3">
+                                    <div id="placeholder-text" class="placeholder-text">
+                                        <i class="fas fa-image my-2"></i>
+                                        <p class="text-muted mb-0">
+                                            Drag and drop your image here or <span class="text-primary">Click to upload</span>
+                                        </p><br>
+                                        <p class="text-muted "><i>.jpg, .png, .bmp, .gif filesize 128KB maximum</i></p>
+                                    </div>
+                                
+                                    <div id="preview-container" class="border preview-container">
+                                        <button id="close-btn" class="close close-btn" type="button">&times;</button>
+                                        <img id="preview-image" class="preview-image" src="" alt="Preview of 2x2 Image"/>
+                                    </div>
+                                    <input type="file" id="file-input-pic" class="file-input" style="display: none;" accept="image/jpeg, image/jpg, image/png, image/gif, image/bmp">
+                                </div>
+                                <span id="input-error"></span>
+                            </div>
+                            <div class="col-md-9 d-flex row gx-4 mt-md-0 mt-3">
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="firstName" class="mb-2">Given Name<span> *</span></label>
+                                    <input type="text" class="form-control" id="firstName">
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="lastName" class="mb-2">Last Name<span> *</span></label>
+                                    <input type="text" class="form-control" id="lastName">
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0    ">
+                                    <label for="middleName" class="mb-2">Middle Name</label>
+                                    <input type="text" class="form-control" id="notRequired">
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="birthdate" class="mb-2">Date of Birth<span> *</span></label>
+                                    <input type="date" class="form-control" id="birthdate">
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="sex" class="mb-2">Sex</label>
+                                    <select class="form-select" name="sex" id="notRequired">
+                                        <option disabled selected value="">Select your sex</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                    </select>
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="citizenship" class="mb-2">Citizenship<span> *</span></label>
+                                    <select name="citizenship" id="citizenship" class="form-select">
+                                        <option disabled selected value="">Select your nationality</option>
+                                        <option value="filipino">Filipino</option>
+                                        <option value="afghan">Afghan</option>
+                                        <option value="albanian">Albanian</option>
+                                        <option value="algerian">Algerian</option>
+                                        <option value="american">American</option>
+                                        <option value="andorran">Andorran</option>
+                                        <option value="angolan">Angolan</option>
+                                        <option value="antiguans">Antiguans</option>
+                                        <option value="argentinean">Argentinean</option>
+                                        <option value="armenian">Armenian</option>
+                                        <option value="australian">Australian</option>
+                                        <option value="austrian">Austrian</option>
+                                        <option value="azerbaijani">Azerbaijani</option>
+                                        <option value="bahamian">Bahamian</option>
+                                        <option value="bahraini">Bahraini</option>
+                                        <option value="bangladeshi">Bangladeshi</option>
+                                        <option value="barbadian">Barbadian</option>
+                                        <option value="barbudans">Barbudans</option>
+                                        <option value="batswana">Batswana</option>
+                                        <option value="belarusian">Belarusian</option>
+                                        <option value="belgian">Belgian</option>
+                                        <option value="belizean">Belizean</option>
+                                        <option value="beninese">Beninese</option>
+                                        <option value="bhutanese">Bhutanese</option>
+                                        <option value="bolivian">Bolivian</option>
+                                        <option value="bosnian">Bosnian</option>
+                                        <option value="brazilian">Brazilian</option>
+                                        <option value="british">British</option>
+                                        <option value="bruneian">Bruneian</option>
+                                        <option value="bulgarian">Bulgarian</option>
+                                        <option value="burkinabe">Burkinabe</option>
+                                        <option value="burmese">Burmese</option>
+                                        <option value="burundian">Burundian</option>
+                                        <option value="cambodian">Cambodian</option>
+                                        <option value="cameroonian">Cameroonian</option>
+                                        <option value="canadian">Canadian</option>
+                                        <option value="cape verdean">Cape Verdean</option>
+                                        <option value="central african">Central African</option>
+                                        <option value="chadian">Chadian</option>
+                                        <option value="chilean">Chilean</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="colombian">Colombian</option>
+                                        <option value="comoran">Comoran</option>
+                                        <option value="congolese">Congolese</option>
+                                        <option value="costa rican">Costa Rican</option>
+                                        <option value="croatian">Croatian</option>
+                                        <option value="cuban">Cuban</option>
+                                        <option value="cypriot">Cypriot</option>
+                                        <option value="czech">Czech</option>
+                                        <option value="danish">Danish</option>
+                                        <option value="djibouti">Djibouti</option>
+                                        <option value="dominican">Dominican</option>
+                                        <option value="dutch">Dutch</option>
+                                        <option value="east timorese">East Timorese</option>
+                                        <option value="ecuadorean">Ecuadorean</option>
+                                        <option value="egyptian">Egyptian</option>
+                                        <option value="emirian">Emirian</option>
+                                        <option value="equatorial guinean">Equatorial Guinean</option>
+                                        <option value="eritrean">Eritrean</option>
+                                        <option value="estonian">Estonian</option>
+                                        <option value="ethiopian">Ethiopian</option>
+                                        <option value="fijian">Fijian</option>                                        
+                                        <option value="finnish">Finnish</option>
+                                        <option value="french">French</option>
+                                        <option value="gabonese">Gabonese</option>
+                                        <option value="gambian">Gambian</option>
+                                        <option value="georgian">Georgian</option>
+                                        <option value="german">German</option>
+                                        <option value="ghanaian">Ghanaian</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="grenadian">Grenadian</option>
+                                        <option value="guatemalan">Guatemalan</option>
+                                        <option value="guinea-bissauan">Guinea-Bissauan</option>
+                                        <option value="guinean">Guinean</option>
+                                        <option value="guyanese">Guyanese</option>
+                                        <option value="haitian">Haitian</option>
+                                        <option value="herzegovinian">Herzegovinian</option>
+                                        <option value="honduran">Honduran</option>
+                                        <option value="hungarian">Hungarian</option>
+                                        <option value="icelander">Icelander</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="indonesian">Indonesian</option>
+                                        <option value="iranian">Iranian</option>
+                                        <option value="iraqi">Iraqi</option>
+                                        <option value="irish">Irish</option>
+                                        <option value="israeli">Israeli</option>
+                                        <option value="italian">Italian</option>
+                                        <option value="ivorian">Ivorian</option>
+                                        <option value="jamaican">Jamaican</option>
+                                        <option value="japanese">Japanese</option>
+                                        <option value="jordanian">Jordanian</option>
+                                        <option value="kazakhstani">Kazakhstani</option>
+                                        <option value="kenyan">Kenyan</option>
+                                        <option value="kittian and nevisian">Kittian and Nevisian</option>
+                                        <option value="kuwaiti">Kuwaiti</option>
+                                        <option value="kyrgyz">Kyrgyz</option>
+                                        <option value="laotian">Laotian</option>
+                                        <option value="latvian">Latvian</option>
+                                        <option value="lebanese">Lebanese</option>
+                                        <option value="liberian">Liberian</option>
+                                        <option value="libyan">Libyan</option>
+                                        <option value="liechtensteiner">Liechtensteiner</option>
+                                        <option value="lithuanian">Lithuanian</option>
+                                        <option value="luxembourger">Luxembourger</option>
+                                        <option value="macedonian">Macedonian</option>
+                                        <option value="malagasy">Malagasy</option>
+                                        <option value="malawian">Malawian</option>
+                                        <option value="malaysian">Malaysian</option>
+                                        <option value="maldivan">Maldivan</option>
+                                        <option value="malian">Malian</option>
+                                        <option value="maltese">Maltese</option>
+                                        <option value="marshallese">Marshallese</option>
+                                        <option value="mauritanian">Mauritanian</option>
+                                        <option value="mauritian">Mauritian</option>
+                                        <option value="mexican">Mexican</option>
+                                        <option value="micronesian">Micronesian</option>
+                                        <option value="moldovan">Moldovan</option>
+                                        <option value="monacan">Monacan</option>
+                                        <option value="mongolian">Mongolian</option>
+                                        <option value="moroccan">Moroccan</option>
+                                        <option value="mosotho">Mosotho</option>
+                                        <option value="motswana">Motswana</option>
+                                        <option value="mozambican">Mozambican</option>
+                                        <option value="namibian">Namibian</option>
+                                        <option value="nauruan">Nauruan</option>
+                                        <option value="nepalese">Nepalese</option>
+                                        <option value="new zealander">New Zealander</option>
+                                        <option value="ni-vanuatu">Ni-Vanuatu</option>
+                                        <option value="nicaraguan">Nicaraguan</option>
+                                        <option value="nigerien">Nigerien</option>
+                                        <option value="north korean">North Korean</option>
+                                        <option value="northern irish">Northern Irish</option>
+                                        <option value="norwegian">Norwegian</option>
+                                        <option value="omani">Omani</option>
+                                        <option value="pakistani">Pakistani</option>
+                                        <option value="palauan">Palauan</option>
+                                        <option value="panamanian">Panamanian</option>
+                                        <option value="papua new guinean">Papua New Guinean</option>
+                                        <option value="paraguayan">Paraguayan</option>
+                                        <option value="peruvian">Peruvian</option>
+                                        <option value="polish">Polish</option>
+                                        <option value="portuguese">Portuguese</option>
+                                        <option value="qatari">Qatari</option>
+                                        <option value="romanian">Romanian</option>
+                                        <option value="russian">Russian</option>
+                                        <option value="rwandan">Rwandan</option>
+                                        <option value="saint lucian">Saint Lucian</option>
+                                        <option value="salvadoran">Salvadoran</option>
+                                        <option value="samoan">Samoan</option>
+                                        <option value="san marinese">San Marinese</option>
+                                        <option value="sao tomean">Sao Tomean</option>
+                                        <option value="saudi">Saudi</option>
+                                        <option value="scottish">Scottish</option>
+                                        <option value="senegalese">Senegalese</option>
+                                        <option value="serbian">Serbian</option>
+                                        <option value="seychellois">Seychellois</option>
+                                        <option value="sierra leonean">Sierra Leonean</option>
+                                        <option value="singaporean">Singaporean</option>
+                                        <option value="slovakian">Slovakian</option>
+                                        <option value="slovenian">Slovenian</option>
+                                        <option value="solomon islander">Solomon Islander</option>
+                                        <option value="somali">Somali</option>
+                                        <option value="south african">South African</option>
+                                        <option value="south korean">South Korean</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="sri lankan">Sri Lankan</option>
+                                        <option value="sudanese">Sudanese</option>
+                                        <option value="surinamer">Surinamer</option>
+                                        <option value="swazi">Swazi</option>
+                                        <option value="swedish">Swedish</option>
+                                        <option value="swiss">Swiss</option>
+                                        <option value="syrian">Syrian</option>
+                                        <option value="taiwanese">Taiwanese</option>
+                                        <option value="tajik">Tajik</option>
+                                        <option value="tanzanian">Tanzanian</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="togolese">Togolese</option>
+                                        <option value="tongan">Tongan</option>
+                                        <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                                        <option value="tunisian">Tunisian</option>
+                                        <option value="turkish">Turkish</option>
+                                        <option value="tuvaluan">Tuvaluan</option>
+                                        <option value="ugandan">Ugandan</option>
+                                        <option value="ukrainian">Ukrainian</option>
+                                        <option value="uruguayan">Uruguayan</option>
+                                        <option value="uzbekistani">Uzbekistani</option>
+                                        <option value="venezuelan">Venezuelan</option>
+                                        <option value="vietnamese">Vietnamese</option>
+                                        <option value="welsh">Welsh</option>
+                                        <option value="yemenite">Yemenite</option>
+                                        <option value="zambian">Zambian</option>
+                                        <option value="zimbabwean">Zimbabwean</option>
+                                      </select>
+                                      <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="religion" class="mb-2">Religion</label>
+                                    <input type="text" class="form-control" id="notRequired">
+                                    <span id="input-error"></span>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-4 py-0">
+                                    <label for="civil" class="mb-2">Civil Status<span> *</span></label>
+                                    <select name="civil" id="civil" class="form-select">
+                                        <option disabled selected value="">Select your Civil Status</option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="separated">Separated</option>
+                                        <option value="divorced">Divorced</option>
+                                        <option value="widowed">Widowed</option>
+                                    </select>
+                                    <span id="input-error"></span>
+                                </div>
+
+                            </div>
+                            <hr class="my-3 mb-md-4 border border-primary" style='width: 98%; align-self: center;'>
+                            
+                            <div class="form-group mb-3 col-md-4 py-0">
+                                <label for="semester" class="mb-2">Semester<span> *</span></label>
+                                <select name="semester" class="form-select" id="semester">
+                                    <option disabled selected value="">Select semester</option>
+                                    <option value="first-sem-2025-2026">First Semester, SY. 2025-2026</option>
+                                    <option value="second-sem-2025-2026">Second Semester, SY. 2025-2026</option>
+                                </select>
+                                <span id="input-error"></span>
+                            </div>
+
+                            <div class="form-group mb-3 col-md-4 py-0">
+                                <label for="admission" class="mb-2">Seeking Admission As<span> *</span></label>
+                                <select name="admission" class="form-select" id="admission">
+                                    <option disabled selected value="">Seeking admission as...</option>
+                                    <option value="freshman">Freshman</option>
+                                    <option value="transferee">Transferee</option>
+                                    <option value="degree-holder">Degree Holder</option>
+                                    <option vlaue="cross-registrant">Cross Registrant</option>
+                                </select>
+                                <span id="input-error"></span>
+                            </div>
+
+                            <div class="form-group mb-3 col-md-4 py-0">
+                                <label for="admission" class="mb-2">Senior High School Strand<span> *</span></label>
+                                <select name="admission" class="form-select" id="admission">
+                                    <option disabled selected value="">Select your strand</option>
+                                    <option value="abm">ABM</option>
+                                    <option value="ga">General Academic</option>
+                                    <option value="stem">STEM</option>
+                                    <option value="humss">HUMSS</option>
+                                    <option value="pa">Performing Arts</option>
+                                    <option value="va">Visual Arts</option>
+                                    <option value="he1">Home Economics 1</option>
+                                    <option value="he2">Home Economics 2</option>
+                                    <option value="ict2">ICT 1</option>
+                                    <option value="ict2">ICT 2</option>
+                                    <option value="ict3">ICT 3</option>
+                                    <option value="ia">Industrial Arts</option>
+                                    <option value="other">Others</option>
+                                    <option value="na">Not Applicable</option>
+                                </select>
+                                <span id="input-error"></span>
+                            </div>
+
+                            <div class="form-group mb-3 col-md-4 py-0">
+                                <label for="course" class="mb-2">Course<span> *</span></label>
+                                <select name="course" id="course" class="form-select">
+                                    <option disabled selected value="">Please select...</option>
+                                    <option value="BMMA">Bachelor in Multimedia Arts</option><option value="ABBD">Bachelor of Arts in Broadcasting (BA BD)</option><option value="DCCM">Bachelor of Arts in Communication with Specialization in Digital Communication and Creative Media</option><option value="ABIS">Bachelor of Arts in International Studies (BAIS)</option><option value="ABPS">Bachelor of Arts in Political Science (BAPS)</option><option value="EED">Bachelor of Elementary Education (BEEd)</option><option value="PTI">Bachelor of Fine Arts (BFA) major in Painting</option><option value="BFAVC">Bachelor of Fine Arts (BFA) major in Visual Communication (Advertising Arts)</option><option value="BPED">Bachelor of Physical Education (BP Ed)</option><option value="BSA">Bachelor of Science in Accountancy (BSA)</option><option value="ARCH">Bachelor of Science in Architecture (BS Arch)</option><option value="BIOEBT">Bachelor of Science in Biology (BS BI) (Ecology and Biodiversity Track)</option><option value="BIOMBT">Bachelor of Science in Biology (BS BI) (Medical Biology Track)</option><option value="BME">Bachelor of Science in Business Administration (BSBA) major in Business Management</option><option value="BFN">Bachelor of Science in Business Administration (BSBA) major in Financial Management</option><option value="BMM">Bachelor of Science in Business Administration (BSBA) major in Marketing Management</option><option value="CE" data-strandwhitelist="ASTEM" disabled="">Bachelor of Science in Civil Engineering (BSCE)</option><option value="CEBP" data-strandblacklist="ASTEM">Bachelor of Science in Civil Engineering Bridging Program (BSCEBP)</option><option value="BSCPE" data-strandwhitelist="ASTEM" disabled="">Bachelor of Science in Computer Engineering (BSCpE)</option><option value="CPEBP" data-strandblacklist="ASTEM">Bachelor of Science in Computer Engineering Bridging Program (BSCpEBP)</option><option value="CS">Bachelor of Science in Computer Science (BSCS)</option><option value="BSCRIM">Bachelor of Science in Criminology with specialization in Cybersecurity</option><option value="BSDS">Bachelor of Science in Data Science (BSDS) </option><option value="EE" data-strandwhitelist="ASTEM" disabled="">Bachelor of Science in Electrical Engineering (BSEE)</option><option value="EEBP" data-strandblacklist="ASTEM">Bachelor of Science in Electrical Engineering Bridging Program (BSEEBP)</option><option value="BSECE" data-strandwhitelist="ASTEM" disabled="">Bachelor of Science in Electronics Engineering (BSECE)</option><option value="ECEBP" data-strandblacklist="ASTEM">Bachelor of Science in Electronics Engineering Bridging Program (BSECEBP)</option><option value="BSEMC">Bachelor of Science in Entertainment and Multimedia Computing (BSEMC) with Specialization in Digital Animation</option><option value="BSEMCG">Bachelor of Science in Entertainment and Multimedia Computing (BSEMC) with Specialization in Game Development</option><option value="BSESS">Bachelor of Science in Exercise and Sports Sciences (BSESS) Major in Fitness and Sports Management</option><option value="BSHM">Bachelor of Science in Hospitality Management (BSHM)</option><option value="IT">Bachelor of Science in Information Technology (BSIT)</option><option value="BSID">Bachelor of Science in Interior Design (BSID)</option><option value="BSLM">Bachelor of Science in Legal Management (BSLM)</option><option value="BSMA">Bachelor of Science in Management Accounting (BSMA)</option><option value="ME" data-strandwhitelist="ASTEM" disabled="">Bachelor of Science in Mechanical Engineering (BSME)</option><option value="MEBP" data-strandblacklist="ASTEM">Bachelor of Science in Mechanical Engineering Bridging Program (BSMEBP)</option><option value="ND">Bachelor of Science in Nutrition and Dietetics (BSND)</option><option value="BSPSY">Bachelor of Science in Psychology (BS Psy)</option><option value="BSTM">Bachelor of Science in Tourism Management (BSTM)</option><option value="SEDE">Bachelor of Secondary Education (BSEd) major in English</option><option value="BSNED">Bachelor of Special Needs Education (BSN Ed) Generalist</option><option value="CECE" data-classwhitelist="D" disabled="">Certificate in Early Childhood Education</option><option value="CPE" data-classwhitelist="D" disabled="">Certificate in Professional Education (CPE)</option><option value="CSE" data-classwhitelist="D" disabled="">Certificate in Special Education</option><option value="D" data-strandwhitelist="ASTEM" disabled="">Doctor of Dental Medicine (DMD)</option><option value="DBP" data-strandwhitelist="AABM,AHUMSS,AGA" disabled="">Doctor of Dental Medicine (DMD) with Bridging Program</option><option value="JD">Juris Doctor (JD)
+                                    </option><option value="LLBR">Law Refreshers Course</option>
+                                </select>
+                                <span id="input-error"></span>
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4"></div>
+
+                            <div class="col-md-12 row m-0 p-0 gx-4">
+                                <div class="col-md-6">
+                                    <figure>
+                                        <figcaption>Upload any of the following:<span> *</span></figcaption>
+                                        <ul>
+                                            <li><span>For Grade 12 graduates:</span> Grade 12 report card. Please upload the front and back pages
+                                                of your Report Card.
+                                            </li>
+                                            <li><span>For graduates of Non-Formal Education:</span> PEPT/ALS rating</li>
+                                            <li><span>For current Grade 12 students:</span> Grade 11 report card. Please upload the front and back
+                                                pages of your Report Card.
+                                            </li>
+                                            <li><span>For college transferees:</span> Transcript of records or Certification of grades.</li>
+                                            <li><span>For degree holders:</span> Transcript of records.</li>
+                                            <li><span>For cross-enrolles:</span> Permit to cross enroll.</li>
+                                        </ul>
+                                        <p class="text-muted"><i>.jpg, .png, .bmp, .gif filesize 128KB maximum</i></p>
+                                    </figure>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                        <div id="drop-container" class="row">
+                                            <!--Image Input-->
+                                            <div id="image-search-container" class="image-search-container col-6 mb-3 me-1" style="width: 175px;">
+                                                <button id="close-btn-grade" class="close-btn-grade d-none  ms-auto mb-2 p-1" type="button">&times;</button>
+                                                <div id="drop-zone-file" class="drop-zone dotted-border p-3 d-flex flex-column align-items-center justify-content-center">
+                                                    
+                                                    <div id="placeholder-text" class="placeholder-text">
+                                                        <i class="fas fa-solid fa-file"></i>
+                                                        <p class="text-muted mb-0">
+                                                            Drag and drop your files here or <span class="text-primary">Click to upload</span>
+                                                        </p>
+                                                    </div>
+                                                
+                                                    <div id="preview-container" class="preview-container">
+                                                        <img id="preview-image" class="preview-image" alt="Preview of 2x2 Image"/>
+                                                        <p id="preview-file-name" class="preview-text"></p>
+                                                        <button id="close-btn" class="close btn btn-outline-danger" type="button">Remove</button>
+                                                    </div>
+                                                    <input type="file" id="file-input-grade" class="file-input" style="display: none;" accept="image/*, .pdf, .doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                                </div>
+                                                <span id="input-error" class="mt-2"></span>
+                                            </div>
+                                        <!---->
+                                        <div class="col-2 d-flex align-items-center justify-content-center">
+                                            <button id="add-drop-zone" class="btn btn-outline-primary" onclick="createDropZone()" style="width: 40px; height: 40px;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <button id="next" class="btn btn-success ms-auto" onclick="validateInputs()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+        <!--Script-->
+        <script src="../static/form.js"></script>
+    </body>
+</html>
