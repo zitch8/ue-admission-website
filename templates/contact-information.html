@@ -47,74 +47,52 @@
         <!--Navbar Content-->
         <div class="container-fluid p-0">
           <ul class="navbar-nav">
-            <a href="" class="link px-4 py-3 nav-link" id="selectableLink">
-              <li class="nav-item d-flex align-items-center">
-                <i class="fa-solid fa-user nav-img ms-4 me-3 img-fluid"></i>
-                Applicant Information
-                <!--remove d-none if its above the link you are working on-->
-                <i class="fa-solid fa-check nav-check ms-4 p-1"></i>
-              </li>
-            </a>
-            <a
-              href="contact-information.html"
-              class="selected link px-4 py-3 nav-link"
-              id="selectableLink"
-            >
-              <li class="nav-item">
-                <i
-                  class="fa-solid fa-address-book nav-img ms-4 me-3 img-fluid"
-                ></i>
-                Contact Information
-
-                <!--remove d-none if its above the link you are working on-->
-                <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
-              </li>
-            </a>
-            <a
-              href=""
-              class="link disabled px-4 py-3 nav-link"
-              id="selectableLink"
-            >
-              <li class="nav-item">
-                <i class="fa-solid fa-school nav-img ms-4 me-3 img-fluid"></i>
-                Previous School
-
-                <!--remove d-none if its above the link you are working on-->
-                <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
-              </li>
-            </a>
-            <a
-              href=""
-              class="link disabled px-4 py-3 nav-link"
-              id="selectableLink"
-            >
-              <li class="nav-item">
-                <i
-                  class="fa-solid fa-check-double nav-img ms-4 me-3 img-fluid"
-                ></i>
-                Confirmation
-
-                <!--remove d-none if its above the link you are working on-->
-                <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
-              </li>
-            </a>
-            <a
-              href=""
-              class="link disabled px-4 py-3 nav-link"
-              id="selectableLink"
-            >
-              <li class="nav-item">
-                <i
-                  class="fa-solid fa-paper-plane nav-img ms-4 me-3 img-fluid"
-                ></i>
-                Submit
-
-                <!--remove d-none if its above the link you are working on-->
-                <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
-              </li>
-            </a>
+              <a href="applicant-information.html" class="link px-4 py-3 nav-link" data-target="1" id="selectableLink">
+                  <li class="nav-item d-flex align-items-center">
+                      <i class="fa-solid fa-user nav-img ms-4 me-3 img-fluid"></i>
+                      Applicant Information
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="contact-information.html" class="selected link px-4 py-3 nav-link" data-target="2" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-address-book nav-img ms-4 me-3 img-fluid"></i>
+                      Contact Information
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="previous-school.html" class="link px-4 py-3 nav-link" data-target="3" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-school nav-img ms-4 me-3 img-fluid"></i>
+                      Previous School
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="confirmation.html" class="link px-4 py-3 nav-link" data-target="4" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-check-double nav-img ms-4 me-3 img-fluid"></i>
+                      Confirmation
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
+              <a href="" class="link px-4 py-3 nav-link" data-target="5" id="selectableLink">
+                  <li class="nav-item">
+                      <i class="fa-solid fa-paper-plane nav-img ms-4 me-3 img-fluid"></i>
+                      Submit
+                      
+                      <!--remove d-none if its above the link you are working on-->
+                      <i class="fa-solid fa-check nav-check ms-4 p-1 d-none"></i>
+                  </li>
+              </a>
           </ul>
-        </div>
+      </div>
       </div>
 
       <div class="col-md-9 py-3 px-5" style="overflow: auto; height: 100vh">
@@ -845,20 +823,20 @@
             </div>
             <div class="form-group mb-3 col-md-5 py-0">
               <label for="guardianName" class="mb-2"
-                >Guardian's Complete Name<span> *</span></label
+                >Guardian's Complete Name</label
               >
-              <input type="text" class="form-control" id="guardianOccupation" />
+              <input type="text" class="form-control" id="notRequired" />
               <span id="input-error"></span>
             </div>
 
             <div class="form-group mb-3 col-md-3 py-0">
               <label for="email" class="mb-2"
-                >Email Address<span> *</span></label
+                >Email Address</label
               >
               <input
                 type="email"
                 class="form-control"
-                id="email"
+                id="notRequired"
                 placeholder="example@website.com"
               />
               <span id="input-error"></span>
