@@ -1,62 +1,116 @@
-// Pages Array
-const pages = [
-    "applicant-information.html",
-    "contact-information.html",
-    "previous-school.html",
-    "confirmation.html",
-    "submit.html"
-];
-
-// Retrieve currentPageIndex from local storage or initialize to 0
-let currentPageIndex = parseInt(localStorage.getItem("currentPageIndex")) || 0;
-
 // Function to save currentPageIndex to local storage
+let currentPageIndex;
+let pages;
+let completedPages;
+
 function saveCurrentPageIndex(index) {
     localStorage.setItem("currentPageIndex", index);
 }
 
+function saveCompletedPages(completedPages) {
+    localStorage.setItem("completedPages", JSON.stringify(completedPages));
+}
+
 // Function to navigate to a specific page
 function navigateToPage(targetIndex) {
-    const currentPage = pages[currentPageIndex];
     const targetPage = pages[targetIndex];
-
-    // Check for skipped pages
-    if (targetIndex > currentPageIndex + 1) {
-        alert("You cannot skip intermediate pages.");
-        return;
+    console.log('asdf', completedPages);
+    
+    if (completedPages.includes(targetIndex) || targetIndex === currentPageIndex + 1) {
+        currentPageIndex = targetIndex;
+        saveCurrentPageIndex(currentPageIndex);
+        console.log('targetPage', targetPage);
+        window.location.href = targetPage;
+        return
     }
+    console.log('targetPage', targetPage);
 
-    // Navigate to the target page
-    currentPageIndex = targetIndex;
-    saveCurrentPageIndex(currentPageIndex); // Save the updated index
-    window.location.href = targetPage;
+    console.log("current", currentPageIndex);
 
     // Add .bg-check class
-    document.body.classList.add("bg-check");
+    document.classList.add("bg-check");
 }
 
-// Function to validate the current page
-function validatePage(page) {
-    // Add your page-specific validation logic here
-    if (page === "applicant-information.html") {
-        const input = document.querySelector("#requiredField");
-        return input && input.value.trim() !== "";
+function markPageAsCompleted(index) {
+    let completedPages = JSON.parse(localStorage.getItem("completedPages"));
+    if (!completedPages.includes(index)) {
+        completedPages.push(index);
+        saveCompletedPages(completedPages);
     }
-    return true;
-}
+};
 
-document.querySelectorAll('.link').forEach(anchor => {
-    anchor.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetIndex = parseInt(event.target.dataset.target) - 1;
-        navigateToPage(targetIndex);
-    });
-});
+function removePageFromCompleted(index) {
+    alert('Please complete the forms first.');
+    let completedPages = JSON.parse(localStorage.getItem("completedPages"));
+    if (completedPages.includes(index)){
+        completedPages = completedPages.filter(pageIndex => pageIndex !== index)
+        saveCompletedPages(completedPages);
+    }
+}
 
 // Load the current page index from local storage and redirect if necessary
 document.addEventListener("DOMContentLoaded", () => {
-    const savedIndex = parseInt(localStorage.getItem("currentPageIndex"));
-    if (!isNaN(savedIndex) && savedIndex !== currentPageIndex) {
-        window.location.href = pages[savedIndex];
+    
+    pages = JSON.parse(localStorage.getItem('pages'));
+        if (!pages) {
+        pages = [
+            "applicant-information.html",
+            "contact-information.html",
+            "previous-school.html",
+            "confirmation.html",
+            "submit.html"
+        ];
+        localStorage.setItem('pages', JSON.stringify(pages));   
     }
+
+    currentPageIndex = parseInt(localStorage.getItem("currentPageIndex"));
+    console.log("current index", currentPageIndex);
+    if (isNaN(currentPageIndex)) {
+        currentPageIndex = 0;
+        localStorage.setItem("currentPageIndex", currentPageIndex);
+    }
+
+    completedPages = JSON.parse(localStorage.getItem("completedPages"));
+    if (!completedPages) {
+        completedPages = [];
+        localStorage.setItem('completedPages', JSON.stringify(completedPages));
+    }
+                        
+    document.querySelectorAll('.link').forEach(anchor => {
+        anchor.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            if (validateInputs()) {
+                console.log('Target Index:', parseInt(event.currentTarget.dataset.target) - 1);
+                const targetIndex = parseInt(event.currentTarget.dataset.target) - 1;
+                markPageAsCompleted(currentPageIndex);
+                console.log("anv", currentPageIndex);
+                navigateToPage(targetIndex);
+            } else {
+                console.log("Validation failed. Fix the inputs before proceeding.");
+                removePageFromCompleted(currentPageIndex);
+
+            }
+        });
+    });
+
+    document.getElementById('next').addEventListener('click', (event) => {
+        event.preventDefault();
+    
+        if (validateInputs()) {
+            console.log("All inputs valid. Proceeding to next page...");
+            console.log(currentPageIndex);
+            markPageAsCompleted(currentPageIndex);
+    
+            if (currentPageIndex < pages.length - 1) {
+                navigateToPage(currentPageIndex + 1);
+            } else {
+                console.log("This is the last page.");
+            }
+        } else {
+            console.log("Validation failed. Please correct the errors.");
+            removePageFromCompleted(currentPageIndex);
+        }
+      });
+    
 });

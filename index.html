@@ -64,9 +64,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col"></div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="container-fluid content p-4">
                             <div class="row">
+                                <div class="d-flex">
+                                    <a class="link mt-2 ms-auto link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+                                        UE Data Privacy Statement
+                                    </a>
+                                </div>
+                                
                                 <div class="col-lg-6 order-1 order-lg-1">
                                     <div class="d-flex align-items-center">
                                         <h1>1</h1>
@@ -139,7 +145,27 @@
                                         </ul>
                                     </div>
                                 </div>
-
+                                <div class="mt-4 col-lg-6 order-2 order-lg-3">
+                                    <p id="modify">To modify your application form and upload your proof of payment, please enter your reference number and last name below.</p>
+                                    <div class="form-group mb-1 px-2 py-0 d-flex flex-column">
+                                        <label for="rn" class="mb-2">Reference Number</label>
+                                        <input type="number" class="form-control" id="rn">
+                                        <a class="link mt-2 ms-auto link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+                                            Forgot Reference Number?
+                                        </a>
+                                    </div>
+                                    <div class="form-group mb-3 px-2  py-0 d-flex flex-column">
+                                        <label for="ln" class="mb-2">Last Name</label>
+                                        <input type="text" class="form-control" id="ln">
+                                    </div>
+                                    
+                                </div>
+                                <div class="e d-flex order-4">
+                                    <button class="ms-auto me-1 btn btn-outline-danger">Edit</button>
+                                    <button class="me-1 btn btn-outline-success">Reprint</button>
+                                    <button class="me-1 btn btn-outline-primary">Upload Proof of Payment</button>
+                                    <button class="btn btn-outline-warning">Set Exam Date</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,6 +176,19 @@
         <footer>
             <!-- place footer here -->
         </footer>
+        <script>
+            localStorage.clear();
+            localStorage.setItem("currentPageIndex", 0);
+            pages = [
+                "applicant-information.html",
+                "contact-information.html",
+                "previous-school.html",
+                "confirmation.html",
+                "submit.html"
+            ]
+            localStorage.setItem('pages', JSON.stringify(pages));
+            localStorage.setItem('completedPages', JSON.stringify([]));
+        </script>
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

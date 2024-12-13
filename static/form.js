@@ -1,5 +1,3 @@
-// Function to validate input fields
-
 function validateInputs() {
   // Select all input and select elements
   const fields = document.querySelectorAll('input, select, .drop-zone, .drop-zone-file');
@@ -19,11 +17,11 @@ function validateInputs() {
               field.classList.add('border-red');
               allValid = false;
             } else {
-              console.log('fileInputLength', fileInput.files.length)
+              localStorage.setItem(field.id, field.value);
               errorSpan.textContent = '';
               field.classList.remove('border-red');
             }
-          } else if (field.value.trim() === '' && (field.id !== 'notRequired')) {
+          } else if (field.value.trim() === '' && field.id !== 'notRequired') {
               errorSpan.textContent = 'This field is required.';
               field.classList.add('border-red');
               allValid = false;
@@ -31,23 +29,33 @@ function validateInputs() {
           /* place else if here for other input validation (ex. email regex and etc. */
           else {
               errorSpan.textContent = '';
+              localStorage.setItem(field.id, field.value);
               field.classList.remove('border-red');
           }
       } else {
         console.log("test", field, "errorspan", errorSpan);
       };
   });
-
-  if (allValid || currentPageIndex < pages.length - 1) {
-    console.log("All inputs are valid! Proceeding to the next page...");
-    console.log(allValid, currentPageIndex, pages.length)
-    navigateToPage(currentPageIndex + 1)
-  } else {
-    console.log(allValid, currentPageIndex, pages.length)
-    alert("Please complete the current page before proceeding.");
-    return;
-  }
+  return allValid;
+  // if (allValid && currentPageIndex < pages.length - 1) {
+  //   console.log("All inputs are valid! Proceeding to the next page...");
+  //   console.log(allValid, currentPageIndex, pages.length)
+  //   markPageAsCompleted(currentPageIndex);
+  //   navigateToPage(currentPageIndex + 1)
+  // } else {
+  //   removePageFromCompleted(currentPageIndex);
+  // }
 }
+
+// function restoreInputValues() {
+//   const fields = document.querySelectorAll('input, select, textarea');
+//   fields.forEach(field => {
+//     const savedValue = localStorage.getItem(field.id);
+//     if (savedValue) {
+//       field.value = savedValue;
+//     }
+//   });
+// }
 
 
 // Handle Drop Zone Setup
@@ -201,5 +209,4 @@ function createDropZone() {
 // Initialize all drop zones
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll("div.drop-zone").forEach((dropzone) => initializeDropZone(dropzone));
-
 });

@@ -29,7 +29,6 @@ main {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,14 +92,21 @@ label {
     font-weight: 500;
     opacity: 90%;
 }
-li, p {
+li, p{
     font-size: 0.813rem;
     font-weight: 300;
+}
+.link {
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+#modify{
+    font-weight: 500;
 }
 select {
     height: 40px;
 }
-select, option {
+input[type=number], input[type=text], select, option {
     font-size: 0.800rem !important;
     font-family: var(--poppins);
     font-weight: 400 !important;
@@ -112,6 +118,24 @@ select, option {
 button {
     font-size: 0.8rem !important;
     font-weight: 500 !important;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.e button {
+    font-size: 12px !important;
+    font-weight: 300 !important;
 }
 
 @media only screen and (max-width: 768px){

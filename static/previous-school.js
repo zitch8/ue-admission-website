@@ -181,11 +181,7 @@ function validateInputs() {
         yearGraduated.classList.remove('border-red');
     }
 
-    // If validation passes, proceed to next
-    if (isValid || currentPageIndex < pages.length - 1) {
-        console.log("All inputs are valid! Proceeding to the next page...");
-        navigateToPage(currentPageIndex + 1)
-    }
+    return isValid
 }
 
 function showError(elementId, message){
