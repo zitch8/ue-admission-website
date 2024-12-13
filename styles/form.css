@@ -22,6 +22,9 @@ body{
 .link:hover{
     background-color: var(--rose-red);
 }
+.bg-check{
+    background-color: var(--disabled)!important;
+}
 
 .selected {
     background-color: var(--dark-red);
@@ -215,6 +218,8 @@ input[type=date], select {
     font-weight: 300;
     opacity: 80%;
 }
+
+
 
 @media only screen and (max-width: 768px){
     .nav-content {
