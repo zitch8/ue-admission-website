@@ -31,7 +31,7 @@ function validateInputs() {
               field.classList.remove('border-red');
           }
       } else {
-        console.log("test", field, "errrorspan", errorSpan);
+        console.log("test", field, "errorspan", errorSpan);
       };
   });
 }
@@ -144,10 +144,12 @@ function resetDropZone(dropZone, previewImage, previewText, placeholderText, pre
   previewText.textContent = "";
 }
 
+
+// Drop Zone Create
 const dropzoneContainer = document.getElementById('drop-container');
 const addDropzoneBtn = document.getElementById('add-drop-zone')
 
-// DROP ZONE CREATE
+
 function createDropZone() {
   const dropZoneWrapper = document.createElement('div');
   dropZoneWrapper.classList.add('image-search-container', 'col-6', 'me-1', 'mb-3');

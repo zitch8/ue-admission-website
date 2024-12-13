@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--poppins);
+}
 header {
     background-color: var(--dark-red);
     font-family: var(--poppins);
@@ -17,4 +23,102 @@ header {
 
 .nav-link:hover{
     color: var(--rose-red)
+}
+
+main {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lualhati{
+    width: 40vw;
+    position: absolute;
+    bottom: 0px;
+    left: 5%;
+    z-index: -1;
+    
+}
+.circle {
+    width: 60vw;
+    height: 60vw;        
+    background-color: var(--light-red);   
+    border-radius: 50%;
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    z-index: -2;
+}
+.circle2 {
+    width: 30vw;
+    height: 30vw;        
+    background-color: var(--light-red);   
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    z-index: -2;
+}
+.content {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+h1 {
+    font-size: 2.8rem;
+    color: var(--dark-red);
+    font-weight: 700;
+}
+h5 {
+    font-size: 0.65rem;
+    font-weight: 300;
+    opacity: 80%;
+    letter-spacing: 2px;
+    line-height: 80%;
+}
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 95%;
+}
+h6 {
+    font-size: 0.813rem;
+    font-weight: 500;
+}
+label {
+    font-size: 0.813rem;
+    font-weight: 500;
+    opacity: 90%;
+}
+li, p {
+    font-size: 0.813rem;
+    font-weight: 300;
+}
+select {
+    height: 40px;
+}
+select, option {
+    font-size: 0.800rem !important;
+    font-family: var(--poppins);
+    font-weight: 400 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    border-radius: 10px !important;
+    opacity: 90% !important;
+}
+button {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+}
+
+@media only screen and (max-width: 768px){
+    .circle {
+        display: none;
+    }
+    .lualhati {
+        display: none;
+    }
 }
