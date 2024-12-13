@@ -122,8 +122,8 @@
                         <div class="form-content container-fluid  justify-content-center row mt-3">
                             <div class="d-flex row gx-4 mt-md-0 mt-3">
                     
-                                <div class="form-group mb-3 d-flex">
-                                    <label class="mb-2 me-4">Are you a Grade 12 graduate or expecting to graduate?</label>
+                                <div class="form-group d-flex">
+                                    <label class="mb-2 me-4">Are you a Grade 12 graduate or expecting to graduate?<span> *</span></label>
                                     <div class="form-check me-4">
                                         <input type="radio" class="form-check-input" id="gradYes" name="gradStatus" value="yes">
                                         <label class="form-check-label" for="gradYes">Yes</label>
@@ -132,10 +132,12 @@
                                         <input type="radio" class="form-check-input" id="gradNo" name="gradStatus" value="no">
                                         <label class="form-check-label" for="gradNo">No</label>
                                     </div>
+                                    
                                 </div>
+                                <span id="g12error" class="error mb-3"></span>
                     
                                 <div class="form-group mb-3">
-                                    <label class="mb-2">Last School Attended</label>
+                                    <label class="mb-2">Last School Attended<span> *</span></label>
                                     <div class="d-flex">
                                         <div class="row w-100">
                                             <!-- Red Button for University of the East - Manila -->
@@ -167,34 +169,40 @@
                                                     <option value="baste">San Sebastian College</option>
                                                     <option value="pup">Polytechnic University of the Philippines</option>
                                                 </select>
+                                                <span id="schoolError" class="error"></span>
                                             </div>
+                                            
 
                                             <!-- School Address Input -->
                                             <div class="mb-3">
-                                                <label for="schoolAddress" class="mb-2">School Address</label>
+                                                <label for="schoolAddress" class="mb-2">School Address<span> *</span></label>
                                                 <input type="text" id="schoolAddress" class="form-control" placeholder="Enter School Address..." disabled>
+                                                <span id="schoolAdError" class="error"></span>
                                             </div>
                     
                                             <!-- School Type Input -->
                                             <div class="mb-3 col-md-4">
-                                                <label for="schoolType" class="mb-2">Type of School</label>
+                                                <label for="schoolType" class="mb-2">Type of School<span> *</span></label>
                                                 <select name="schoolType" id="schoolType" class="form-select" disabled>
                                                     <option disabled selected value="">Select your school type</option>
                                                     <option value="private">Private</option>
                                                     <option value="public">Public</option>
                                                 </select>
+                                                <span id="schoolTypeError" class="error"></span>
                                             </div>
                     
                                             <!-- School Code Input -->
                                             <div class="mb-3 col-md-4">
-                                                <label for="schoolCode" class="mb-2">School Code</label>
+                                                <label for="schoolCode" class="mb-2">School Code<span> *</span></label>
                                                 <input type="text" id="schoolCode" class="form-control" placeholder="Enter School Code..." disabled>
+                                                <span id="schoolCodeError" class="error"></span>
                                             </div>
                     
                                             <!-- Year Graduated Input -->
                                             <div class="mb-3 col-md-4">
-                                                <label for="yearGraduated" class="mb-2">Year Graduated / will Graduate</label>
+                                                <label for="yearGraduated" class="mb-2">Year Graduated / will Graduate<span> *</span></label>
                                                 <input type="text" id="yearGraduated" class="form-control">
+                                                <span id="yearGradError" class="error"></span>
                                             </div>
                                         </div>
                                     </div>

@@ -187,13 +187,13 @@ body{
     opacity: 100%;
 }
 
-.form-content #input-error {
-    color: var(--dark-red);
+#input-error, .error {
+    color: var(--dark-red) !important;
     font-size: 0.8rem;
 }
 
 .border-red {
-    border-color: var(--dark-red);
+    border-color: var(--dark-red) !important;
 }
 
 .form-content input[type=text], input[type=date], select, option {

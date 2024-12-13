@@ -103,53 +103,98 @@ function disable() {
 
 function validateInputs() {
     let isValid = true;
+    clearErrors();
 
     // Validate the Grade 12 graduate radio buttons
     if (!document.querySelector('input[name="gradStatus"]:checked')) {
-        alert("Please select whether you are a Grade 12 graduate or expecting to graduate.");
+        
+        showError("g12error","Please select whether you are a Grade 12 graduate or expecting to graduate.");
         isValid = false;
     }
 
     // Validate School Address, Type of School, School Code, and Year Graduated
+    const schoolSearch = document.getElementById('schoolSearch');
     const schoolAddress = document.getElementById('schoolAddress');
     const schoolType = document.getElementById('schoolType');
     const schoolCode = document.getElementById('schoolCode');
     const yearGraduated = document.getElementById('yearGraduated');
+    
+    //
+    const numRegEx = /^[0-9]+$/;
+    const currentYear = new Date().getFullYear();
 
     // Add red borders for invalid fields
+    if (schoolSearch.value === ""){
+        schoolSearch.classList.add('border-red');
+        
+        showError("schoolError", "This field is required.")
+        isValid = false;
+    } else{
+        schoolSearch.classList.remove("border-red");
+    }
+
     if (schoolAddress.disabled === false && schoolAddress.value === "") {
-        schoolAddress.style.border = "1px solid red";
+        schoolAddress.classList.add('border-red');
+        
+        showError("schoolAdError", "This field is required.")
         isValid = false;
     } else {
-        schoolAddress.style.border = "";
+        schoolAddress.classList.remove('border-red');
     }
 
     if (schoolType.disabled === false && schoolType.value === "") {
-        schoolType.style.border = "1px solid red";
+        schoolType.classList.add('border-red');
+        
+        showError("schoolTypeError", "This field is required.");
         isValid = false;
     } else {
-        schoolType.style.border = "";
+        schoolType.classList.remove('border-red');
     }
 
     if (schoolCode.disabled === false && schoolCode.value === "") {
-        schoolCode.style.border = "1px solid red";
+        schoolCode.classList.add('border-red');
+        
+        showError('schoolCodeError', "This field is required.");
+        isValid = false;
+    } else if (schoolCode.disabled === false && !numRegEx.test(schoolCode.value)){
+        schoolCode.classList.add('border-red');
+        
+        showError('schoolCodeError', 'Please enter numeric values only.');
         isValid = false;
     } else {
-        schoolCode.style.border = "";
+        schoolCode.classList.remove('border-red');
     }
 
-    if (yearGraduated.value === "") {
-        yearGraduated.style.border = "1px solid red";
+    if (yearGraduated.value.trim() === "") {
+        yearGraduated.classList.add('border-red');
+        showError('yearGradError', 'This field is required.');
+        isValid = false;
+    } else if (!numRegEx.test(yearGraduated.value)){
+        yearGraduated.classList.add('border-red');
+        showError('yearGradError', 'Please enter numeric values only.');
+        isValid = false;
+    } else if (yearGraduated.value < 1900 || yearGraduated.value > currentYear){
+        yearGraduated.classList.add('border-red');
+        showError('yearGradError', 'Year must be in range 1920 to current year.');
         isValid = false;
     } else {
-        yearGraduated.style.border = "";
+        yearGraduated.classList.remove('border-red');
     }
 
     // If validation passes, proceed to next
     if (isValid) {
         alert("Form validated successfully!");
         // You can submit the form or navigate to the next page here
-    } else {
-        alert("Please fill all the required fields.");
     }
+}
+
+function showError(elementId, message){
+    const errorElement = document.getElementById(elementId);
+    errorElement.innerText = message;
+    const inputElemet = document.getElementById(elementId.replace("Error", ""));
+}
+
+function clearErrors() {
+    document.querySelectorAll(".error").forEach(el => el.innerText = "");
+    document.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
 }
