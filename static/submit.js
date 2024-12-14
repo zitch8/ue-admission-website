@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () =>{
     var profile = localStorage.getItem('file-input-pic');
+    console.log('profile', profile);
     var firstName = localStorage.getItem('firstName');
     var middleName = localStorage.getItem('middleName');
     var lastName = localStorage.getItem('lastName');
@@ -9,7 +10,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     var email = localStorage.getItem('email');
     var examination = localStorage.getItem('tba');
     
+    const blob = new Blob([profile], {type: profile.type})
     console.log(profile, firstName, middleName, lastName, program, campus, classS, email, examination);
+    const prof = document.getElementById('profile')
+    prof.src = URL.createObjectURL(blob)
+    // imageReader(prof, blob);
+
     const fn = document.getElementById("firstName");
     inputText(fn, firstName);
 
@@ -35,11 +41,21 @@ document.addEventListener("DOMContentLoaded", () =>{
     inputText(ex, examination);
 
 })
-
+function imageReader(inputId, inputValue){
+    const reader = new FileReader();
+    reader.onload = () => {
+        inputId.src = reader.result;
+    }
+    reader.readAsDataURL(inputValue);
+}
 function inputText(inputId, inputValue){
     if (inputId){
         inputId.disabled = false;
         inputId.value = inputValue || "";
         inputId.disabled = true;
     }
+}
+
+function validateInputs(){
+    return true
 }

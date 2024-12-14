@@ -17,7 +17,8 @@ function validateInputs() {
               field.classList.add('border-red');
               allValid = false;
             } else {
-              localStorage.setItem(field.id, field.value);
+              console.log('test123', fileInput.id, 'file123'  , fileInput.files[0]);
+              localStorage.setItem(fileInput.id, fileInput.files[0]);
               errorSpan.textContent = '';
               field.classList.remove('border-red');
             }
@@ -48,7 +49,7 @@ function validateInputs() {
 }
 
 function restoreInputValues() {
-  const fields = document.querySelectorAll('input, select, textarea');
+  const fields = document.querySelectorAll('input, select');
   fields.forEach(field => {
     const savedValue = localStorage.getItem(field.id);
     if (savedValue) {

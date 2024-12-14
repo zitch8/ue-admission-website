@@ -3,11 +3,11 @@ function validateInputs() {
     var antiSpam = document.getElementById("antiSpam").value.toLowerCase();
     var dateandtimecontainer = document.getElementById("dateandtime");
 
-    dateandtimecontainer.style.border = "";
+    dateandtimecontainer.classList.remove('border-red');
 
     if (!dateandtime) {
         alert("Please select an examination date and time.");
-        dateandtimecontainer.style.border = "1px solid red";
+        dateandtimecontainer.classList.add('border-red');
         return false;
     }
 
@@ -16,7 +16,6 @@ function validateInputs() {
         alert("The characters you typed are incorrect. Please try again.");
         return false; // Prevent form submission
     }
-
-    alert("Form validated successfully!");
+    localStorage.setItem('tba', dateandtime.value);
     return true;
 }
