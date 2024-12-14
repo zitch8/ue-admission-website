@@ -1,6 +1,6 @@
 function validateInputs() {
   // Select all input and select elements
-  const fields = document.querySelectorAll('input, select, .drop-zone, .drop-zone-file');
+  const fields = document.querySelectorAll('input:not(:disabled), select:not(:disabled), .drop-zone:not(.disabled), .drop-zone-file:not(.disabled)');
   let allValid = true;
 
   fields.forEach(field => {
