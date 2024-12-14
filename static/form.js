@@ -26,13 +26,22 @@ function validateInputs() {
               errorSpan.textContent = 'This field is required.';
               field.classList.add('border-red');
               allValid = false;
-          }
-          /* place else if here for other input validation (ex. email regex and etc. */
-          else {
-              errorSpan.textContent = '';
-              localStorage.setItem(field.id, field.value);
-              field.classList.remove('border-red');
-          }
+          } else if (field.id === 'email') {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(field.value.trim())) {
+                errorSpan.textContent = 'Please enter a valid email address.';
+                field.classList.add('border-red');
+                allValid = false;
+            } else {
+                errorSpan.textContent = '';
+                localStorage.setItem(field.id, field.value);
+                field.classList.remove('border-red');
+            }
+        } else {
+            errorSpan.textContent = '';
+            localStorage.setItem(field.id, field.value);
+            field.classList.remove('border-red');
+        }
       } else {
         console.log("test", field, "errorspan", errorSpan);
       };
