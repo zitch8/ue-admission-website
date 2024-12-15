@@ -1,12 +1,12 @@
 function validateInputs() {
   // Select all input and select elements
-  const fields = document.querySelectorAll('input:not(:disabled), select:not(:disabled), .drop-zone:not(.disabled), .drop-zone-file:not(.disabled)');
+  const fields = document.querySelectorAll('input:not(:disabled), select:not(:disabled), .drop-zone:not(.disabled), .drop-zone-file:not(.disabled), .cpi-input');
   let allValid = true;
 
   fields.forEach(field => {
       const errorSpan = field.nextElementSibling;
       if (errorSpan && errorSpan.id === 'input-error') {
-        
+        console.log("field", field.id)
         // For Drag Drop Input
           if (field.classList.contains('drop-zone') || field.classList.contains('drop-zone-file')){
             const fileInput = field.querySelector('input[type="file"]');
@@ -21,6 +21,19 @@ function validateInputs() {
               localStorage.setItem(fileInput.id, fileInput.files[0]);
               errorSpan.textContent = '';
               field.classList.remove('border-red');
+            }
+          } else if (field.classList.contains('cpi-input')){
+            
+            const mobile = field.querySelector('input[type="number"]');
+            console.log('mobile', mobile.classList);
+            const inputGroup = field.querySelector('.input-group');
+            if (!mobile || mobile.value.trim().length != 10){
+              errorSpan.textContent = 'Please enter a valid number.';
+              inputGroup.classList.add('border-red');
+              allValid = false;
+            } else {
+              errorSpan.textContent = '';
+              inputGroup.classList.remove('border-red');
             }
           } else if (field.value.trim() === '' && field.id !== 'notRequired') {
               errorSpan.textContent = 'This field is required.';
@@ -37,7 +50,9 @@ function validateInputs() {
                 localStorage.setItem(field.id, field.value);
                 field.classList.remove('border-red');
             }
-        } else {
+        } 
+        
+        else {
             errorSpan.textContent = '';
             localStorage.setItem(field.id, field.value);
             field.classList.remove('border-red');
