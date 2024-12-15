@@ -22,7 +22,7 @@ function validateInputs() {
               errorSpan.textContent = '';
               field.classList.remove('border-red');
             }
-          } else if (field.classList.contains('cpi-input')){
+          } else if (field.classList.contains('cpi-input') && (!field.classList.contains('not-required'))){
             
             const mobile = field.querySelector('input[type="number"]');
             console.log('mobile', mobile.classList);
