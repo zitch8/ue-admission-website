@@ -22,19 +22,21 @@ function validateInputs() {
               errorSpan.textContent = '';
               field.classList.remove('border-red');
             }
-          } else if (field.classList.contains('cpi-input') && (!field.classList.contains('not-required'))){
-            
-            const mobile = field.querySelector('input[type="number"]');
-            console.log('mobile', mobile.classList);
-            const inputGroup = field.querySelector('.input-group');
-            if (!mobile || mobile.value.trim().length != 10){
-              errorSpan.textContent = 'Please enter a valid number.';
-              inputGroup.classList.add('border-red');
-              allValid = false;
-            } else {
-              errorSpan.textContent = '';
-              inputGroup.classList.remove('border-red');
+          } else if (field.classList.contains('cpi-input')){
+            if(!field.classList.contains('not-required')){
+              const mobile = field.querySelector('input[type="number"]');
+              console.log('mobile', mobile.classList);
+              const inputGroup = field.querySelector('.input-group');
+              if (!mobile || mobile.value.length != 10){
+                errorSpan.textContent = 'Please enter a valid number.';
+                inputGroup.classList.add('border-red');
+                allValid = false;
+              } else {
+                errorSpan.textContent = '';
+                inputGroup.classList.remove('border-red');
+              }
             }
+            
           } else if (field.value.trim() === '' && field.id !== 'notRequired') {
               errorSpan.textContent = 'This field is required.';
               field.classList.add('border-red');
